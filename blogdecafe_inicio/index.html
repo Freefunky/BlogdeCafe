@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
         <head>
-            <meta charset="UTF-8">
+            <meta charset="UTF-8">     <!--Mantener esta codificación para caracteres-->
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            
+            <!--VIEWPORT hace que se vea bien en un dispositivo movil mostrar proporciona-->
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title> BlogDeCafé </title>
-                
-                <link rel="stylesheet" href="css/normalize.css">
+            <meta name="description" content="Página web de blog de café">
 
-                <link rel="preconnect" href="https://fonts.gstatic.com">
-                <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet"> 
-            
-                <link rel="stylesheet" href="css/style.css">       
+          <!--Prefetch   Cargar la siguiente página que esperamos que el usuario visite para mejor experiencia para él-->  
+
+          <link rel="prefetch" href="nosotros.html" ass="document">
+                
+               
+         <!--Preload necesito cargar los archivos cuanto antes-->       
+
+            <link rel="preload" href="css/normalize.css" as="style">
+            <link rel="preload" href="css/normalize.css">
+
+            <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&display=swap" 
+            crossorigin="crossorigin" as="font"> 
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet"> 
+
+            <link rel="preload" href="css/style.css" as="style">
+            <link rel="stylesheet" href="css/style.css">
+
+            <!--<link rel="preload" href="img/blog1.jpg" as="image"> No lo cargo URGENTE porque tengo WEBP -->
 
         </head>
 
@@ -48,7 +63,10 @@
                         <h3>Nuestro Blog</h3>
                             <article class="entrada">   <!-- Tiene una IMAGEN, un TEXTO y un ENLACE-->
                                 <div class="entrada__imagen">
-                                    <img loading="lazy" src="img/blog1.jpg" alt="imagen blog">
+                                    <picture>  <!--Cargará una imágen u otra según la soporte el navegador o No-->
+                                       <source loading="lazy" srcset="img/blog1.webp" type="image/webp">
+                                       <img loading="lazy" src="img/blog1.jpg" alt="imagen blog">
+                                    </picture>
                                 </div>
 
                                 <div class="entrada__contenido">
@@ -64,7 +82,11 @@
 
                             <article class="entrada">
                                 <div class="entrada__imagen">
-                                    <img loading="lazy" src="img/blog2.jpg" alt="imagen blog">
+
+                                    <picture>  <!--Cargará una imágen u otra según la soporte el navegador o No-->
+                                        <source loading="lazy" srcset="img/blog2.webp" type="image/webp">
+                                        <img loading="lazy" src="img/blog2.jpg" alt="imagen blog">
+                                     </picture>
                                 </div>
 
                                 <div class="entrada__contenido">
@@ -81,7 +103,12 @@
 
                             <article class="entrada">
                                 <div class="entrada__imagen">
-                                    <img loading="lazy" src="img/blog3.jpg" alt="imagen blog">
+
+                                    <picture>  <!--Cargará una imágen u otra según la soporte el navegador o No-->
+                                        <source loading="lazy" srcset="img/blog3.webp" type="image/webp">
+                                        <img loading="lazy" src="img/blog3.jpg" alt="imagen blog">
+                                     </picture>
+                                    
                                 </div>
 
                                 <div class="entrada__contenido">
@@ -113,7 +140,7 @@
                                         <span class="widget-curso__info">20</span>
                                     </p>
 
-                                    <a href="entrada.html" class="boton boton--secundario">Más Información</a>
+                                    <a href="entrada.html" class="boton boton--secundario">Más Información sobre nuestros cursos</a>
                                 </li>
 
                                 <li class="widget-curso">
@@ -126,7 +153,7 @@
                                         <span class="widget-curso__info">20</span>
                                     </p>
 
-                                    <a href="entrada.html" class="boton boton--secundario">Más Información</a>
+                                    <a href="entrada.html" class="boton boton--secundario">Más Información sobre nuestros cursos</a>
                                 </li>
 
                             </ul>
@@ -153,7 +180,8 @@
                 </div>
             </footer>
 
-
+            <!--MODERNIZR  Librería de Java Script detecta las caracteristicas de un navegador y sgún sea, se procede-->
+         <script src="js/modernizr.js"></script>
 
 
         </body>
